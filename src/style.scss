@@ -1,0 +1,93 @@
+@import "compass/css3";
+
+@import url(https://fonts.googleapis.com/css?family=Sigmar+One);
+@import url(https://fonts.googleapis.com/css?family=Slabo+27px);
+
+$sigmar : 'Sigmar One', cursive;
+$slabo : 'Slabo 27px', serif;
+@mixin heading{
+  position: absolute;
+  color: white;
+  -webkit-transform: rotate(-20deg);
+   z-index: 10;
+}
+
+body{
+	background-image: url(http://www.noupe.com/wp-content/uploads/2009/10/pattern-01.jpg);
+	text-align: center;
+	margin: 0 auto;
+  svg{
+	   width: 25%;
+     z-index: -1;
+  }
+}
+
+h2,h3{
+  @include heading;
+}
+
+h3{
+	left: 10%;
+	top: 50px;
+	font-size: 30px;
+	font-family: $sigmar;
+}
+
+h2{
+	font-family: $slabo;
+	left: 10%;
+	top: 150px;
+  background-color: rgba(29, 125, 215, 0.5);
+  padding: 10px;
+  display: none;
+}
+
+#heart{
+	-webkit-animation: move 2s infinite;
+}
+#love{
+  margin-bottom: -5px;
+  width: 25px;
+}
+#body{
+	fill:#ED1C24;
+  cursor: pointer;
+}
+.eye1, .eye2, .mouth{
+	fill:#FFFFFF;
+  cursor: pointer;
+}
+.pupil{
+	transform-origin: center center;
+	-webkit-animation: blink 2s infinite alternate;
+  cursor: pointer;
+}
+.mask{
+	fill: #ED1C24;
+	opacity: 0;
+}
+@-webkit-keyframes blink{
+	0%{
+		-webkit-transform: scale(1, 1);
+	}
+	90%{
+		-webkit-transform: scale(1, 1);
+	}
+	95%{
+		-webkit-transform: scale(1, 0.2);
+	}
+	100%{
+		-webkit-transform: scale(1, 1);
+	}
+}
+@-webkit-keyframes move{
+	0%{
+		-webkit-transform: translate(0,0);
+	}
+	50%{
+		-webkit-transform: translate(0,5px);
+	}
+	100%{
+		-webkit-transform: translate(0,0);
+	}
+}
